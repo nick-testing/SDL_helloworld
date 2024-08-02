@@ -1,8 +1,8 @@
 #ifndef HELLOWORLD_H
 #define HELLOWORLD_H
 
-typedef struct SDL_Window;
-typedef struct SDL_Surface;
+typedef struct SDL_Window SDL_Window;
+typedef struct SDL_Surface SDL_Surface;
 
 class HelloWorld {
 public:
