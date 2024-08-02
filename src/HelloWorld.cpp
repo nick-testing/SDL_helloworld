@@ -18,7 +18,6 @@ bool HelloWorld::Init() {
         // Create window
         window = SDL_CreateWindow("Hello World!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                   SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-        
         if (!window) {
             std::cerr << "SDL: window creation failed. Error: " << SDL_GetError() << std::endl;
             SDL_Quit();
@@ -37,6 +36,12 @@ bool HelloWorld::LoadMedia() {
     bool success = true;
 
     helloWorldSurface = SDL_LoadBMP("../assets/helloworld.bmp");
+    if (!helloWorldSurface) {
+        std::cerr << "SDL: window creation failed. Error: " << SDL_GetError() << std::endl;
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        success = false;
+    }
 
     return success;
 }
