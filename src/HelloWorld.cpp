@@ -35,11 +35,10 @@ bool HelloWorld::Init() {
 bool HelloWorld::LoadMedia() {
     bool success = true;
 
-    helloWorldSurface = SDL_LoadBMP("../assets/helloworld.bmp");
+    // Load image
+    helloWorldSurface = SDL_LoadBMP("/assets/helloworld.bmp");
     if (!helloWorldSurface) {
         std::cerr << "SDL: window creation failed. Error: " << SDL_GetError() << std::endl;
-        SDL_DestroyWindow(window);
-        SDL_Quit();
         success = false;
     }
 
@@ -47,5 +46,14 @@ bool HelloWorld::LoadMedia() {
 }
 
 void HelloWorld::Close() {
+    // Deallocate surface
+    SDL_FreeSurface(helloWorldSurface);
+    helloWorldSurface = nullptr;
+    
+    // Destroy window
+    SDL_DestroyWindow(window);
+    window = nullptr;
 
+    // Quit SDL subsystems
+    SDL_Quit();
 }
