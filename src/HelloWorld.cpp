@@ -36,7 +36,7 @@ bool HelloWorld::LoadMedia() {
     bool success = true;
 
     // Load image
-    helloWorldSurface = SDL_LoadBMP("/assets/helloworld.bmp");
+    helloWorldSurface = SDL_LoadBMP("assets/helloworld.bmp");
     if (!helloWorldSurface) {
         std::cerr << "SDL: window creation failed. Error: " << SDL_GetError() << std::endl;
         success = false;
