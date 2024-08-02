@@ -2,7 +2,7 @@ CC = g++
 CPPFLAGS = -c -pedantic
 SDLFLAGS = -lSDL2
 SRC = ./src/
-OBJ = $(SRC)main.o HelloWorld.o
+OBJ = $(SRC)main.o $(SRC)HelloWorld.o
 
 all: helloworld.out
 
