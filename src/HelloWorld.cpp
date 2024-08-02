@@ -12,7 +12,7 @@ HelloWorld::HelloWorld():
 
 
 bool HelloWorld::Init() {
-
+    
 }
 
 bool HelloWorld::LoadMedia() {
