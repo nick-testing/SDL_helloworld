@@ -25,7 +25,6 @@ private:
     bool Init();
     bool LoadMedia();
     void Close();
-
 };
 
 #endif
