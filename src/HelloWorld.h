@@ -7,7 +7,7 @@ typedef struct SDL_Surface;
 class HelloWorld {
 public:
     HelloWorld();
-    void StartGame();
+    void Run();
 
 private:
     static const int SCREEN_HEIGHT = 720;

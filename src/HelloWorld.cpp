@@ -57,3 +57,26 @@ void HelloWorld::Close() {
     // Quit SDL subsystems
     SDL_Quit();
 }
+
+void HelloWorld::Run() {
+    if (!Init()) {
+        std:: cerr << "Initialization failed";
+    }
+    else {
+        if (!LoadMedia()) {
+            std::cerr << "Media loading failed" << std::endl;
+        }
+        else {
+            // Apply the image
+            SDL_BlitSurface(helloWorldSurface, nullptr, screenSurface, nullptr);
+
+            SDL_UpdateWindowSurface(window);
+
+            //Hack to get window to stay up
+            SDL_Event e; bool quit = false; while( quit == false ){ while( SDL_PollEvent( &e ) ){ if( e.type == SDL_QUIT ) quit = true; } }
+
+        }
+    }
+
+    Close();
+}
