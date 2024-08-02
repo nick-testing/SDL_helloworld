@@ -2,17 +2,14 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 
-static const int SCREEN_HEIGHT = 720;
-static const int SCREEN_WIDTH = 1280;
-
 HelloWorld::HelloWorld(): 
-    gWindow(nullptr), 
-    gScreenSurface(nullptr), 
-    gHelloWorld(nullptr) {}
+    window(nullptr), 
+    screenSurface(nullptr), 
+    helloWorldSurface(nullptr) {}
 
 
 bool HelloWorld::Init() {
-    
+
 }
 
 bool HelloWorld::LoadMedia() {

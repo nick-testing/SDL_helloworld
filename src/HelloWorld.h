@@ -5,23 +5,26 @@ typedef struct SDL_Window;
 typedef struct SDL_Surface;
 
 class HelloWorld {
-    public:
-        HelloWorld();
-        void StartGame();
+public:
+    HelloWorld();
+    void StartGame();
 
-    private:
-        // Window used for program rendering
-        SDL_Window* gWindow;
+private:
+    static const int SCREEN_HEIGHT = 720;
+    static const int SCREEN_WIDTH = 1280;
 
-        // Surface contained by the window
-        SDL_Surface* gScreenSurface;
+    // Window used for program rendering
+    SDL_Window* window;
 
-        // Image that will be shown on the screen
-        SDL_Surface* gHelloWorld;
+    // Surface contained by the window
+    SDL_Surface* screenSurface;
 
-        bool Init();
-        bool LoadMedia();
-        void Close();
+    // Image that will be shown on the screen
+    SDL_Surface* helloWorldSurface;
+
+    bool Init();
+    bool LoadMedia();
+    void Close();
 
 };
 
